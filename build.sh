@@ -61,6 +61,7 @@ main() {
 
   # Build the site
   echo "Building the site..."
+  hugo mod get
   hugo --gc --minify
 
 }
