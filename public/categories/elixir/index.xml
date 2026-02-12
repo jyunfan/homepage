@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Elixir on Jyun-Fan Tsai 蔡濬帆</title>
+    <link>http://localhost:1313/categories/elixir/</link>
+    <description>Recent content in Elixir on Jyun-Fan Tsai 蔡濬帆</description>
+    <generator>Hugo</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Wed, 13 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/elixir/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advent of Code</title>
+      <link>http://localhost:1313/blog/advent-of-code/</link>
+      <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/advent-of-code/</guid>
+      <description>&lt;p&gt;一年一度的 &lt;a href=&#34;https://adventofcode.com/&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Advent of Code&lt;/a&gt; 又開始了，今年是我第一次參加，正好用來練習 Elixir。&lt;/p&gt;&#xA;&lt;p&gt;Advent of Code 是馬拉松競賽，連續 25 天每天都有一個問題，每天的問題都會有兩個部分，第一部分的問題比較簡單，第二部分的問題會比較難，而且第二部分的問題會跟第一部分的問題有關聯。相對其他程式競賽，Advent of Code 有一個地方很特別，那就是他第二部份的問題的 Input 跟 第一部份是相同的，只是題目會比較難。&#xA;做了幾天題目之後，我在解第一部份的問題時，會先猜猜看第二部份的問題會是什麼，然後再來寫第一部份的程式，這樣第二部份的問題就會比較好寫了。&lt;/p&gt;&#xA;&lt;p&gt;以下分享一些解題心得。&lt;/p&gt;&#xA;&lt;h1 id=&#34;day-3&#34; class=&#34;relative group&#34;&gt;Day 3 &lt;span class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100&#34;&gt;&lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34; style=&#34;text-decoration-line: none !important;&#34; href=&#34;#day-3&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;Part 1&lt;/p&gt;&#xA;&lt;p&gt;觀察到每個 row 可以獨立計算，利用兩層迴圈，第一層迴圈是 row，第二層迴圈是 column，從左到右，遇到符號的時候，就把數字記起來。比如說，row的值是&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;..123*..&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;. =&amp;gt; 0&#xA;. =&amp;gt; 0&#xA;1 =&amp;gt; 1&#xA;2 =&amp;gt; 12&#xA;3 =&amp;gt; 123&#xA;* =&amp;gt; 123&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;當讀到*的時候，就知道把數字是123，因為123旁邊有符號，所以把這個數字記起來。&lt;/p&gt;&#xA;&lt;p&gt;Part 2&lt;/p&gt;&#xA;&lt;p&gt;跟 Part 1 一樣，只是要多做一件事情，就是紀錄每個符號連結到的數字有哪些，最後找出連結到兩個數字的符號，然後把這兩個數字相乘。&lt;/p&gt;&#xA;&lt;p&gt;Day 3 的 source 在 &lt;a href=&#34;https://github.com/jyunfan/advent_of_code_2023/blob/main/day3.livemd&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;GitHub&lt;/a&gt; 上，有興趣的朋友可以看看。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Datascience Elixir</title>
+      <link>http://localhost:1313/blog/datascience-elixir/</link>
+      <pubDate>Mon, 11 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/datascience-elixir/</guid>
+      <description>&lt;p&gt;Elixir 也很適合資料科學的應用，這篇文章會介紹 Elixir 的資料科學生態系統。&lt;/p&gt;&#xA;&lt;p&gt;首先我們快速對比 Python 與 Elixir 常用的工具：&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Python&lt;/th&gt;&#xA;          &lt;th&gt;Elixir&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Notebook&lt;/td&gt;&#xA;          &lt;td&gt;Livebook&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Numpy&lt;/td&gt;&#xA;          &lt;td&gt;Nx&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Pandas&lt;/td&gt;&#xA;          &lt;td&gt;Explorer&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;</description>
+    </item>
+    <item>
+      <title>Learning Elixir</title>
+      <link>http://localhost:1313/blog/learning-elixir/</link>
+      <pubDate>Wed, 25 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/learning-elixir/</guid>
+      <description>&lt;p&gt;第 N 次學習 Functional Programming Language 就上手。&lt;/p&gt;&#xA;&lt;p&gt;不論是上古神獸 Lisp，Haskell，或是現代一點的 Scala，如果你跟我一樣嘗試過學習 Functional Programming Language，但是都沒有成功，那麼 Elixir 是你最好的選擇。&lt;/p&gt;&#xA;&lt;h1 id=&#34;pipe-operation---括號終結者&#34; class=&#34;relative group&#34;&gt;Pipe Operation - 括號終結者 &lt;span class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100&#34;&gt;&lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34; style=&#34;text-decoration-line: none !important;&#34; href=&#34;#pipe-operation---%e6%8b%ac%e8%99%9f%e7%b5%82%e7%b5%90%e8%80%85&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;我朋友 ypcat 推我入 Elixir 的坑的時候，舉出了一個 Elixir 的優點，那就是 Elixir 的語法很簡單，很像 Ruby，所以學習起來很容易，最重要的是可讀性很高，沒有一堆括號()。&lt;/p&gt;&#xA;&lt;p&gt;比如說我們要把字串的前後空白去掉，再轉成大寫，然後把 WORLD 換成 Gary，如果用 Python 寫的話，會是這樣：&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;astr = &amp;#34; Hello world! &amp;#34;&#xA;astr.strip().upper().replace(&amp;#34;WORLD&amp;#34;, &amp;#34;Gary&amp;#34;)&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;這邊可以看到由於 Python 支援 object ，所以字串有 strip, upper, replace 這些 method 可以用，而且這些 method 都會回傳一個新的字串，所以可以一直串起來用。&lt;/p&gt;&#xA;&lt;p&gt;再來看一下 Elixir 的寫法：&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;astr = &amp;#34; Hello world! &amp;#34;&#xA;String.trim(String.replace(String.upcase(astr), &amp;#34;WORLD&amp;#34;, &amp;#34;Gary&amp;#34;))&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;巢狀的括號看起來是不是很難懂? 這時候就可以用到 Pipe Operation 來改寫：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

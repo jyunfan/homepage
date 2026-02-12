@@ -1,3 +1,33 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = 'https://tsai.fans'
+languageCode = 'zh-tw'
+title = 'Jyun-Fan Tsai 蔡濬帆'
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  mainSections = ["blog"]
+
+[params.homepage]
+  layout = "page"
+  showRecent = true
+  recentLimit = 5
+
+[params.article]
+  showDate = true
+  showReadingTime = true
+
+[params.header]
+  layout = "basic"
+
+[[menus.main]]
+  name = "Blog"
+  pageRef = "blog"
+  weight = 10
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[module]
+[[module.imports]]
+    path = 'github.com/jpanther/congo/v2'

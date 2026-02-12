@@ -1,0 +1,466 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html
+  lang="zh-tw"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#FFFFFF" />
+  
+  <title>Introduction to Embedded Systems with Docker &middot; Jyun-Fan Tsai 蔡濬帆</title>
+    <meta name="title" content="Introduction to Embedded Systems with Docker &middot; Jyun-Fan Tsai 蔡濬帆" />
+  
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="http://localhost:1313/js/appearance.min.8a082f81b27f3cb2ee528df0b0bdc39787034cf2cc34d4669fbc9977c929023c.js"
+    integrity="sha256-iggvgbJ/PLLuUo3wsL3Dl4cDTPLMNNRmn7yZd8kpAjw="
+  ></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="http://localhost:1313/css/main.bundle.min.100caa677b4bc416cdd884107b203b4869f9b413a19aa57d12069fb826f1abe9.css"
+    integrity="sha256-EAyqZ3tLxBbN2IQQeyA7SGn5tBOhmqV9EgafuCbxq&#43;k="
+  />
+  
+  
+  
+  
+  
+  
+  
+  <meta
+    name="description"
+    content="
+      
+        Hi everyone joining the course Introduction to Embedded Systems Software and Development Environments on Coursera. I found that installing VirtualBox according to the suggestion required downloading a large file and setting up the environment. Instead, I am sharing the steps to set up the environment for the course using Docker.
+Step 1: Install Docker #Get Docker Desktop
+Step 2: Pull and run the Docker image #$ docker run -d  ubuntu:22.04 sleep 8640000
+Step 3: Access the Docker containe #$ docker container ls
+You will see the container ID and the name of the container. Use the container ID to access the container.
+      
+    "
+  />
+  
+  
+  
+  
+    <link rel="canonical" href="http://localhost:1313/blog/introduction-embedded-systems-docker/" />
+  
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:url" content="http://localhost:1313/blog/introduction-embedded-systems-docker/">
+  <meta property="og:site_name" content="Jyun-Fan Tsai 蔡濬帆">
+  <meta property="og:title" content="Introduction to Embedded Systems with Docker">
+  <meta property="og:description" content="Hi everyone joining the course Introduction to Embedded Systems Software and Development Environments on Coursera. I found that installing VirtualBox according to the suggestion required downloading a large file and setting up the environment. Instead, I am sharing the steps to set up the environment for the course using Docker.
+Step 1: Install Docker #Get Docker Desktop
+Step 2: Pull and run the Docker image #$ docker run -d ubuntu:22.04 sleep 8640000 Step 3: Access the Docker containe #$ docker container ls You will see the container ID and the name of the container. Use the container ID to access the container.">
+  <meta property="og:locale" content="zh_tw">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2024-04-30T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-04-30T00:00:00+00:00">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Introduction to Embedded Systems with Docker">
+  <meta name="twitter:description" content="Hi everyone joining the course Introduction to Embedded Systems Software and Development Environments on Coursera. I found that installing VirtualBox according to the suggestion required downloading a large file and setting up the environment. Instead, I am sharing the steps to set up the environment for the course using Docker.
+Step 1: Install Docker #Get Docker Desktop
+Step 2: Pull and run the Docker image #$ docker run -d ubuntu:22.04 sleep 8640000 Step 3: Access the Docker containe #$ docker container ls You will see the container ID and the name of the container. Use the container ID to access the container.">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Blog",
+    "name": "Introduction to Embedded Systems with Docker",
+    "headline": "Introduction to Embedded Systems with Docker",
+    
+    "abstract": "\u003cp\u003eHi everyone joining the course \u003ca href=\u0022https:\/\/www.coursera.org\/learn\/introduction-embedded-systems\/home\/welcome\u0022 target=\u0022_blank\u0022 rel=\u0022noreferrer\u0022\u003eIntroduction to Embedded Systems Software and Development Environments\u003c\/a\u003e on Coursera. I found that installing VirtualBox according to the \u003ca href=\u0022https:\/\/www.coursera.org\/learn\/introduction-embedded-systems\/resources\/jDf20\u0022 target=\u0022_blank\u0022 rel=\u0022noreferrer\u0022\u003esuggestion\u003c\/a\u003e required downloading a large file and setting up the environment. Instead, I am sharing the steps to set up the environment for the course using Docker.\u003c\/p\u003e\n\u003ch2 id=\u0022step-1-install-docker\u0022 class=\u0022relative group\u0022\u003eStep 1: Install Docker \u003cspan class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100\u0022\u003e\u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022 style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#step-1-install-docker\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\u003c\/span\u003e\u003c\/h2\u003e\u003cp\u003eGet \u003ca href=\u0022https:\/\/docs.docker.com\/desktop\/\u0022 target=\u0022_blank\u0022 rel=\u0022noreferrer\u0022\u003eDocker Desktop\u003c\/a\u003e\u003c\/p\u003e\n\u003ch2 id=\u0022step-2-pull-and-run-the-docker-image\u0022 class=\u0022relative group\u0022\u003eStep 2: Pull and run the Docker image \u003cspan class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100\u0022\u003e\u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022 style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#step-2-pull-and-run-the-docker-image\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\u003c\/span\u003e\u003c\/h2\u003e\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003e$ docker run -d  ubuntu:22.04 sleep 8640000\n\u003c\/code\u003e\u003c\/pre\u003e\u003ch2 id=\u0022step-3-access-the-docker-containe\u0022 class=\u0022relative group\u0022\u003eStep 3: Access the Docker containe \u003cspan class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100\u0022\u003e\u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022 style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#step-3-access-the-docker-containe\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\u003c\/span\u003e\u003c\/h2\u003e\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003e$ docker container ls\n\u003c\/code\u003e\u003c\/pre\u003e\u003cp\u003eYou will see the container ID and the name of the container. Use the container ID to access the container.\u003c\/p\u003e",
+    "inLanguage": "zh-tw",
+    "url" : "http:\/\/localhost:1313\/blog\/introduction-embedded-systems-docker\/",
+    "author" : {
+      "@type": "Person",
+      "name": ""
+    },
+    "copyrightYear": "2024",
+    "dateCreated": "2024-04-30T00:00:00\u002b00:00",
+    "datePublished": "2024-04-30T00:00:00\u002b00:00",
+    
+    "dateModified": "2024-04-30T00:00:00\u002b00:00",
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "158"
+  }
+  </script>
+    
+    <script type="application/ld+json">
+    {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "Jyun Fan Tsai 蔡濬帆",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/blog/",
+       "name": "Blog",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/categories/embedded/",
+       "name": "Embedded",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "Introduction to Embedded Systems With Docker",
+       "position": 4
+     }
+   ]
+ }
+  </script>
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+</head>
+<body
+    class="m-auto flex h-screen max-w-7xl flex-col bg-neutral px-6 text-lg leading-7 text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32"
+  >
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="-translate-y-8 rounded-b-lg bg-primary-200 px-3 py-1 text-sm focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="pe-2 font-bold text-primary-600 dark:text-primary-400">&darr;</span
+        >Skip to main content</a
+      >
+    </div>
+    
+    
+      <header class="py-6 font-semibold text-neutral-900 dark:text-neutral sm:py-10 print:hidden">
+  <nav class="flex items-start justify-between sm:items-center">
+    
+    <div class="flex flex-row items-center">
+      
+  <a
+    class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+    rel="me"
+    href="/"
+    >Jyun-Fan Tsai 蔡濬帆</a
+  >
+
+    </div>
+    
+    
+      <ul class="flex list-none flex-col text-end sm:flex-row">
+        
+          
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="/blog/"
+                  title="Blog"
+                  
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >Blog</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+          
+        
+      </ul>
+    
+  </nav>
+</header>
+
+    
+    <div class="relative flex grow flex-col">
+      <main id="main-content" class="grow">
+        
+  <article>
+    <header class="max-w-prose">
+      
+      <h1 class="mb-8 mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        Introduction to Embedded Systems with Docker
+      </h1>
+      
+        <div class="mb-10 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+          
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2024-04-30 00:00:00 &#43;0000 UTC">April 30, 2024</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+    
+
+    
+    
+  </div>
+
+  
+  
+
+
+        </div>
+      
+      
+    </header>
+    <section class="prose mt-0 flex max-w-full flex-col dark:prose-invert lg:flex-row">
+      
+      <div class="min-h-0 min-w-0 max-w-prose grow">
+        <p>Hi everyone joining the course <a href="https://www.coursera.org/learn/introduction-embedded-systems/home/welcome" target="_blank" rel="noreferrer">Introduction to Embedded Systems Software and Development Environments</a> on Coursera. I found that installing VirtualBox according to the <a href="https://www.coursera.org/learn/introduction-embedded-systems/resources/jDf20" target="_blank" rel="noreferrer">suggestion</a> required downloading a large file and setting up the environment. Instead, I am sharing the steps to set up the environment for the course using Docker.</p>
+<h2 id="step-1-install-docker" class="relative group">Step 1: Install Docker <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#step-1-install-docker" aria-label="Anchor">#</a></span></h2><p>Get <a href="https://docs.docker.com/desktop/" target="_blank" rel="noreferrer">Docker Desktop</a></p>
+<h2 id="step-2-pull-and-run-the-docker-image" class="relative group">Step 2: Pull and run the Docker image <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#step-2-pull-and-run-the-docker-image" aria-label="Anchor">#</a></span></h2><pre tabindex="0"><code>$ docker run -d  ubuntu:22.04 sleep 8640000
+</code></pre><h2 id="step-3-access-the-docker-containe" class="relative group">Step 3: Access the Docker containe <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#step-3-access-the-docker-containe" aria-label="Anchor">#</a></span></h2><pre tabindex="0"><code>$ docker container ls
+</code></pre><p>You will see the container ID and the name of the container. Use the container ID to access the container.</p>
+<table>
+  <thead>
+      <tr>
+          <th>CONTAINER ID</th>
+          <th>IMAGE</th>
+          <th>COMMAND</th>
+          <th>CREATED</th>
+          <th>STATUS</th>
+          <th>PORTS</th>
+          <th>NAMES</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>6ec4514d27ee</td>
+          <td>ubuntu:22.04</td>
+          <td>&ldquo;sleep 864000&rdquo;</td>
+          <td>16 hours ago</td>
+          <td>Up 16 hours</td>
+          <td></td>
+          <td>wizardly_nightingale</td>
+      </tr>
+  </tbody>
+</table>
+<pre tabindex="0"><code>docker exec -it wizardly_nightingale /bin/bash
+</code></pre><h2 id="step-4-install-the-required-packages" class="relative group">Step 4: Install the required packages <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#step-4-install-the-required-packages" aria-label="Anchor">#</a></span></h2><p>Now you are inside the container. Install the required packages.</p>
+<pre tabindex="0"><code>$ apt install build-essential unzip gcc-arm-none-eabi
+</code></pre><p>You are all set to start the course. Enjoy learning!</p>
+
+      </div>
+    </section>
+    <footer class="max-w-prose pt-8 print:hidden">
+      
+  <div class="flex">
+    
+    
+    
+    <div class="place-self-center">
+      
+      
+      <div class="text-2xl sm:text-lg">
+</div>
+    </div>
+  </div>
+
+
+      
+
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="group flex" href="http://localhost:1313/blog/passkey/">
+              <span
+                class="me-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
+                ><span class="ltr:inline rtl:hidden">&larr;</span
+                ><span class="ltr:hidden rtl:inline">&rarr;</span></span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Passkey</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2024-04-27 00:00:00 &#43;0000 UTC">April 27, 2024</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+            <a class="group flex text-right" href="http://localhost:1313/blog/learn-atak/">
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >What is ATAK?</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-11-23 00:00:00 &#43;0000 UTC">November 23, 2025</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ms-2 text-neutral-700 transition-transform group-hover:-translate-x-[-2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
+                ><span class="ltr:inline rtl:hidden">&rarr;</span
+                ><span class="ltr:hidden rtl:inline">&larr;</span></span
+              >
+            </a>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+      </main>
+      
+        <div
+          class="pointer-events-none absolute bottom-0 end-0 top-[100vh] w-12"
+          id="to-top"
+          hidden="true"
+        >
+          <a
+            href="#the-top"
+            class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 backdrop-blur hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+            aria-label="Scroll to top"
+            title="Scroll to top"
+          >
+            &uarr;
+          </a>
+        </div>
+      <footer class="py-10 print:hidden">
+  
+  
+  <div class="flex items-center justify-between">
+    <div>
+      
+      
+        <p class="text-sm text-neutral-500 dark:text-neutral-400">
+            &copy;
+            2026
+            
+        </p>
+      
+      
+      
+        <p class="text-xs text-neutral-500 dark:text-neutral-400">
+          
+          
+          Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+            href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://github.com/jpanther/congo" target="_blank" rel="noopener noreferrer">Congo</a>
+        </p>
+      
+    </div>
+    <div class="flex flex-row items-center">
+      
+      
+      
+      
+    </div>
+  </div>
+  
+  
+</footer>
+
+    </div>
+  </body>
+</html>

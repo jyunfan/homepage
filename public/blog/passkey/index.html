@@ -1,0 +1,470 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html
+  lang="zh-tw"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#FFFFFF" />
+  
+  <title>Passkey &middot; Jyun-Fan Tsai 蔡濬帆</title>
+    <meta name="title" content="Passkey &middot; Jyun-Fan Tsai 蔡濬帆" />
+  
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="http://localhost:1313/js/appearance.min.8a082f81b27f3cb2ee528df0b0bdc39787034cf2cc34d4669fbc9977c929023c.js"
+    integrity="sha256-iggvgbJ/PLLuUo3wsL3Dl4cDTPLMNNRmn7yZd8kpAjw="
+  ></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="http://localhost:1313/css/main.bundle.min.100caa677b4bc416cdd884107b203b4869f9b413a19aa57d12069fb826f1abe9.css"
+    integrity="sha256-EAyqZ3tLxBbN2IQQeyA7SGn5tBOhmqV9EgafuCbxq&#43;k="
+  />
+  
+  
+  
+  
+  
+  
+  
+  <meta
+    name="description"
+    content="
+      
+        來到了2024年，你還在用一個密碼登入所有網站嗎?
+來看看 Passkey 可以怎麼幫助你。
+首先，我們來看看密碼的問題：
+
+你有多少個密碼?
+你的密碼有多長?
+
+我們都聽密碼要長，要複雜，但是你真的能記得所有密碼嗎?許多人會用相同的密碼登入不同的網站，這樣一旦有一個網站被駭客入侵，你的所有帳號都會被盜走。
+你可以去 haveibeenpwned 這個網站看看你的密碼有沒有被外洩過，如果有，你就應該趕快換掉。因為根據統計，有81%的資料外洩事故跟遺失密碼有關Report
+現在我們了解到密碼的問題，那麼 Passkey 可以怎麼幫助你呢?密碼學家發明了公鑰加密，一個簡單的解釋是，你可以產生一組公鑰和私鑰，你可以把公鑰給別人，別人可以用公鑰加密訊息，但是只有你的私鑰可以解密。這樣你就不用擔心密碼被盜了。比如說Bob公開了他的公鑰P，Alice用P加密了一個訊息M，只有Bob的私鑰S才能解密M。這樣子Alice就可以驗證這個訊息是Bob發出的。
+為了方便使用，我們可以使用Google或是Apple的Passkey，這樣你就不用自己管理公鑰和私鑰了。
+首先，我們來看看Google的Passkey怎麼設定：
+在你的手機上登入 Google的帳號，點選進入 Passkey，然後點選&quot;取得密碼金鑰&quot;，之後就可以利用手機的指紋或是臉部辨識來登入你的帳號。
+設定完Passkey之後，我們來看看如何使用Passkey登入網站，以下是露天拍賣的設定步驟。用手機網頁或是露天App進入登入後就可以設定。
+既然Passkey這麼方便，為什麼不試試看呢? 目前唯一的理由就是支援Passkey的網站還不夠多，但是隨著時間的推移，我相信Passkey會變得越來越普及。
+      
+    "
+  />
+  
+  
+  
+  
+    <link rel="canonical" href="http://localhost:1313/blog/passkey/" />
+  
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:url" content="http://localhost:1313/blog/passkey/">
+  <meta property="og:site_name" content="Jyun-Fan Tsai 蔡濬帆">
+  <meta property="og:title" content="Passkey">
+  <meta property="og:description" content="來到了2024年，你還在用一個密碼登入所有網站嗎? 來看看 Passkey 可以怎麼幫助你。
+首先，我們來看看密碼的問題：
+你有多少個密碼? 你的密碼有多長? 我們都聽密碼要長，要複雜，但是你真的能記得所有密碼嗎?許多人會用相同的密碼登入不同的網站，這樣一旦有一個網站被駭客入侵，你的所有帳號都會被盜走。
+你可以去 haveibeenpwned 這個網站看看你的密碼有沒有被外洩過，如果有，你就應該趕快換掉。因為根據統計，有81%的資料外洩事故跟遺失密碼有關Report
+現在我們了解到密碼的問題，那麼 Passkey 可以怎麼幫助你呢?密碼學家發明了公鑰加密，一個簡單的解釋是，你可以產生一組公鑰和私鑰，你可以把公鑰給別人，別人可以用公鑰加密訊息，但是只有你的私鑰可以解密。這樣你就不用擔心密碼被盜了。比如說Bob公開了他的公鑰P，Alice用P加密了一個訊息M，只有Bob的私鑰S才能解密M。這樣子Alice就可以驗證這個訊息是Bob發出的。
+為了方便使用，我們可以使用Google或是Apple的Passkey，這樣你就不用自己管理公鑰和私鑰了。
+首先，我們來看看Google的Passkey怎麼設定： 在你的手機上登入 Google的帳號，點選進入 Passkey，然後點選&#34;取得密碼金鑰&#34;，之後就可以利用手機的指紋或是臉部辨識來登入你的帳號。
+設定完Passkey之後，我們來看看如何使用Passkey登入網站，以下是露天拍賣的設定步驟。用手機網頁或是露天App進入登入後就可以設定。
+既然Passkey這麼方便，為什麼不試試看呢? 目前唯一的理由就是支援Passkey的網站還不夠多，但是隨著時間的推移，我相信Passkey會變得越來越普及。">
+  <meta property="og:locale" content="zh_tw">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2024-04-27T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-04-27T00:00:00+00:00">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Passkey">
+  <meta name="twitter:description" content="來到了2024年，你還在用一個密碼登入所有網站嗎? 來看看 Passkey 可以怎麼幫助你。
+首先，我們來看看密碼的問題：
+你有多少個密碼? 你的密碼有多長? 我們都聽密碼要長，要複雜，但是你真的能記得所有密碼嗎?許多人會用相同的密碼登入不同的網站，這樣一旦有一個網站被駭客入侵，你的所有帳號都會被盜走。
+你可以去 haveibeenpwned 這個網站看看你的密碼有沒有被外洩過，如果有，你就應該趕快換掉。因為根據統計，有81%的資料外洩事故跟遺失密碼有關Report
+現在我們了解到密碼的問題，那麼 Passkey 可以怎麼幫助你呢?密碼學家發明了公鑰加密，一個簡單的解釋是，你可以產生一組公鑰和私鑰，你可以把公鑰給別人，別人可以用公鑰加密訊息，但是只有你的私鑰可以解密。這樣你就不用擔心密碼被盜了。比如說Bob公開了他的公鑰P，Alice用P加密了一個訊息M，只有Bob的私鑰S才能解密M。這樣子Alice就可以驗證這個訊息是Bob發出的。
+為了方便使用，我們可以使用Google或是Apple的Passkey，這樣你就不用自己管理公鑰和私鑰了。
+首先，我們來看看Google的Passkey怎麼設定： 在你的手機上登入 Google的帳號，點選進入 Passkey，然後點選&#34;取得密碼金鑰&#34;，之後就可以利用手機的指紋或是臉部辨識來登入你的帳號。
+設定完Passkey之後，我們來看看如何使用Passkey登入網站，以下是露天拍賣的設定步驟。用手機網頁或是露天App進入登入後就可以設定。
+既然Passkey這麼方便，為什麼不試試看呢? 目前唯一的理由就是支援Passkey的網站還不夠多，但是隨著時間的推移，我相信Passkey會變得越來越普及。">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Blog",
+    "name": "Passkey",
+    "headline": "Passkey",
+    
+    "abstract": "\u003cp\u003e來到了2024年，你還在用一個密碼登入所有網站嗎?\n來看看 Passkey 可以怎麼幫助你。\u003c\/p\u003e\n\u003cp\u003e首先，我們來看看密碼的問題：\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003e你有多少個密碼?\u003c\/li\u003e\n\u003cli\u003e你的密碼有多長?\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003cp\u003e我們都聽密碼要長，要複雜，但是你真的能記得所有密碼嗎?許多人會用相同的密碼登入不同的網站，這樣一旦有一個網站被駭客入侵，你的所有帳號都會被盜走。\u003c\/p\u003e\n\u003cp\u003e你可以去 \u003ca href=\u0022https:\/\/haveibeenpwned.com\/Passwords\u0022 target=\u0022_blank\u0022 rel=\u0022noreferrer\u0022\u003ehaveibeenpwned\u003c\/a\u003e 這個網站看看你的密碼有沒有被外洩過，如果有，你就應該趕快換掉。因為根據統計，有81%的資料外洩事故跟遺失密碼有關\u003ca href=\u0022https:\/\/locker.io\/blog\/10-password-statistics-2022\u0022 target=\u0022_blank\u0022 rel=\u0022noreferrer\u0022\u003eReport\u003c\/a\u003e\u003c\/p\u003e\n\u003cp\u003e現在我們了解到密碼的問題，那麼 Passkey 可以怎麼幫助你呢?密碼學家發明了公鑰加密，一個簡單的解釋是，你可以產生一組公鑰和私鑰，你可以把公鑰給別人，別人可以用公鑰加密訊息，但是只有你的私鑰可以解密。這樣你就不用擔心密碼被盜了。比如說Bob公開了他的公鑰P，Alice用P加密了一個訊息M，只有Bob的私鑰S才能解密M。這樣子Alice就可以驗證這個訊息是Bob發出的。\u003c\/p\u003e\n\u003cp\u003e為了方便使用，我們可以使用Google或是Apple的Passkey，這樣你就不用自己管理公鑰和私鑰了。\u003c\/p\u003e\n\u003cp\u003e首先，我們來看看Google的Passkey怎麼設定：\n在你的手機上登入 Google的帳號，點選進入 \u003ca href=\u0022https:\/\/www.google.com\/account\/about\/passkeys\/\u0022 target=\u0022_blank\u0022 rel=\u0022noreferrer\u0022\u003ePasskey\u003c\/a\u003e，然後點選\u0026quot;取得密碼金鑰\u0026quot;，之後就可以利用手機的指紋或是臉部辨識來登入你的帳號。\u003c\/p\u003e\n\u003cp\u003e設定完Passkey之後，我們來看看如何使用Passkey登入網站，以下是露天拍賣的\u003ca href=\u0022https:\/\/www1.ruten.com.tw\/help\/member\/9503\/\u0022 target=\u0022_blank\u0022 rel=\u0022noreferrer\u0022\u003e設定步驟\u003c\/a\u003e。用手機網頁或是露天App進入登入後就可以設定。\u003c\/p\u003e\n\u003cp\u003e既然Passkey這麼方便，為什麼不試試看呢? 目前唯一的理由就是支援Passkey的網站還不夠多，但是隨著時間的推移，我相信Passkey會變得越來越普及。\u003c\/p\u003e",
+    "inLanguage": "zh-tw",
+    "url" : "http:\/\/localhost:1313\/blog\/passkey\/",
+    "author" : {
+      "@type": "Person",
+      "name": ""
+    },
+    "copyrightYear": "2024",
+    "dateCreated": "2024-04-27T00:00:00\u002b00:00",
+    "datePublished": "2024-04-27T00:00:00\u002b00:00",
+    
+    "dateModified": "2024-04-27T00:00:00\u002b00:00",
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "22"
+  }
+  </script>
+    
+    <script type="application/ld+json">
+    {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "Jyun Fan Tsai 蔡濬帆",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/blog/",
+       "name": "Blog",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/categories/security/",
+       "name": "Security",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "Passkey",
+       "position": 4
+     }
+   ]
+ }
+  </script>
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+</head>
+<body
+    class="m-auto flex h-screen max-w-7xl flex-col bg-neutral px-6 text-lg leading-7 text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32"
+  >
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="-translate-y-8 rounded-b-lg bg-primary-200 px-3 py-1 text-sm focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="pe-2 font-bold text-primary-600 dark:text-primary-400">&darr;</span
+        >Skip to main content</a
+      >
+    </div>
+    
+    
+      <header class="py-6 font-semibold text-neutral-900 dark:text-neutral sm:py-10 print:hidden">
+  <nav class="flex items-start justify-between sm:items-center">
+    
+    <div class="flex flex-row items-center">
+      
+  <a
+    class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+    rel="me"
+    href="/"
+    >Jyun-Fan Tsai 蔡濬帆</a
+  >
+
+    </div>
+    
+    
+      <ul class="flex list-none flex-col text-end sm:flex-row">
+        
+          
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
+              
+                <a
+                  href="/blog/"
+                  title="Blog"
+                  
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >Blog</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+          
+        
+      </ul>
+    
+  </nav>
+</header>
+
+    
+    <div class="relative flex grow flex-col">
+      <main id="main-content" class="grow">
+        
+  <article>
+    <header class="max-w-prose">
+      
+      <h1 class="mb-8 mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        Passkey
+      </h1>
+      
+        <div class="mb-10 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+          
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2024-04-27 00:00:00 &#43;0000 UTC">April 27, 2024</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+    
+
+    
+    
+  </div>
+
+  
+  
+
+
+        </div>
+      
+      
+    </header>
+    <section class="prose mt-0 flex max-w-full flex-col dark:prose-invert lg:flex-row">
+      
+      <div class="min-h-0 min-w-0 max-w-prose grow">
+        <p>來到了2024年，你還在用一個密碼登入所有網站嗎?
+來看看 Passkey 可以怎麼幫助你。</p>
+<p>首先，我們來看看密碼的問題：</p>
+<ul>
+<li>你有多少個密碼?</li>
+<li>你的密碼有多長?</li>
+</ul>
+<p>我們都聽密碼要長，要複雜，但是你真的能記得所有密碼嗎?許多人會用相同的密碼登入不同的網站，這樣一旦有一個網站被駭客入侵，你的所有帳號都會被盜走。</p>
+<p>你可以去 <a href="https://haveibeenpwned.com/Passwords" target="_blank" rel="noreferrer">haveibeenpwned</a> 這個網站看看你的密碼有沒有被外洩過，如果有，你就應該趕快換掉。因為根據統計，有81%的資料外洩事故跟遺失密碼有關<a href="https://locker.io/blog/10-password-statistics-2022" target="_blank" rel="noreferrer">Report</a></p>
+<p>現在我們了解到密碼的問題，那麼 Passkey 可以怎麼幫助你呢?密碼學家發明了公鑰加密，一個簡單的解釋是，你可以產生一組公鑰和私鑰，你可以把公鑰給別人，別人可以用公鑰加密訊息，但是只有你的私鑰可以解密。這樣你就不用擔心密碼被盜了。比如說Bob公開了他的公鑰P，Alice用P加密了一個訊息M，只有Bob的私鑰S才能解密M。這樣子Alice就可以驗證這個訊息是Bob發出的。</p>
+<p>為了方便使用，我們可以使用Google或是Apple的Passkey，這樣你就不用自己管理公鑰和私鑰了。</p>
+<p>首先，我們來看看Google的Passkey怎麼設定：
+在你的手機上登入 Google的帳號，點選進入 <a href="https://www.google.com/account/about/passkeys/" target="_blank" rel="noreferrer">Passkey</a>，然後點選&quot;取得密碼金鑰&quot;，之後就可以利用手機的指紋或是臉部辨識來登入你的帳號。</p>
+<p>設定完Passkey之後，我們來看看如何使用Passkey登入網站，以下是露天拍賣的<a href="https://www1.ruten.com.tw/help/member/9503/" target="_blank" rel="noreferrer">設定步驟</a>。用手機網頁或是露天App進入登入後就可以設定。</p>
+<p>既然Passkey這麼方便，為什麼不試試看呢? 目前唯一的理由就是支援Passkey的網站還不夠多，但是隨著時間的推移，我相信Passkey會變得越來越普及。</p>
+
+      </div>
+    </section>
+    <footer class="max-w-prose pt-8 print:hidden">
+      
+  <div class="flex">
+    
+    
+    
+    <div class="place-self-center">
+      
+      
+      <div class="text-2xl sm:text-lg">
+</div>
+    </div>
+  </div>
+
+
+      
+
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="group flex" href="http://localhost:1313/blog/advent-of-code/">
+              <span
+                class="me-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
+                ><span class="ltr:inline rtl:hidden">&larr;</span
+                ><span class="ltr:hidden rtl:inline">&rarr;</span></span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Advent of Code</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2023-12-13 00:00:00 &#43;0000 UTC">December 13, 2023</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+            <a class="group flex text-right" href="http://localhost:1313/blog/introduction-embedded-systems-docker/">
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Introduction to Embedded Systems with Docker</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2024-04-30 00:00:00 &#43;0000 UTC">April 30, 2024</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ms-2 text-neutral-700 transition-transform group-hover:-translate-x-[-2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
+                ><span class="ltr:inline rtl:hidden">&rarr;</span
+                ><span class="ltr:hidden rtl:inline">&larr;</span></span
+              >
+            </a>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+      </main>
+      
+        <div
+          class="pointer-events-none absolute bottom-0 end-0 top-[100vh] w-12"
+          id="to-top"
+          hidden="true"
+        >
+          <a
+            href="#the-top"
+            class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 backdrop-blur hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+            aria-label="Scroll to top"
+            title="Scroll to top"
+          >
+            &uarr;
+          </a>
+        </div>
+      <footer class="py-10 print:hidden">
+  
+  
+  <div class="flex items-center justify-between">
+    <div>
+      
+      
+        <p class="text-sm text-neutral-500 dark:text-neutral-400">
+            &copy;
+            2026
+            
+        </p>
+      
+      
+      
+        <p class="text-xs text-neutral-500 dark:text-neutral-400">
+          
+          
+          Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+            href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://github.com/jpanther/congo" target="_blank" rel="noopener noreferrer">Congo</a>
+        </p>
+      
+    </div>
+    <div class="flex flex-row items-center">
+      
+      
+      
+      
+    </div>
+  </div>
+  
+  
+</footer>
+
+    </div>
+  </body>
+</html>
