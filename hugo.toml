@@ -16,6 +16,11 @@ title = 'Jyun-Fan Tsai 蔡濬帆'
 [params.article]
   showDate = true
   showReadingTime = true
+  showTableOfContents = true
+
+[markup.tableOfContents]
+  startLevel = 2
+  endLevel = 4
 
 [params.header]
   layout = "basic"
